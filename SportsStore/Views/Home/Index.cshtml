@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<Product>
 @{
+    Layout = "_Layout";
 }
 
 <h3>Products</h3>
@@ -16,7 +17,7 @@
     <form asp-action="AddProduct" method="post">
         <div class="row">
             <div class="col"><input name="Name" class="form-control" /></div>
-            <div class="col"><input name="Categoy" class="form-control" /></div>
+            <div class="col"><input name="Category" class="form-control" /></div>
             <div class="col"><input name="PurchasePrice" class="form-control" /></div>
             <div class="col"><input name="RetailPrice" class="form-control" /></div>
             <div class="col">
@@ -33,11 +34,13 @@
     {
         @foreach (Product item in Model)
         {
-            <div class="row p-2">@item.Name</div>
-            <div class="row p-2">@item.Category</div>
-            <div class="row p-2">@item.PurchasePrice</div>
-            <div class="row p-2">@item.RetailPrice</div>
-            <div class="row p-2"></div>
+            <div class="row p-2">
+                <div class="col p-2">@item.Name</div>
+                <div class="col p-2">@item.Category</div>
+                <div class="col p-2">@item.PurchasePrice</div>
+                <div class="col p-2">@item.RetailPrice</div>
+                <div class="col p-2"></div>
+            </div>
         }
     }
 </div>
